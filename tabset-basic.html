@@ -1,0 +1,54 @@
+<ngb-tabset [activeId]="selectedTab" #tabs routerControlled>
+  <ngb-tab  id="first-tab">
+      <ng-template ngbTabTitle> 
+          <a class="nav-link1" routerLink="/dashboard" [queryParams]="{tab:'first-tab'}">first-tab</a>
+           
+        </ng-template>
+        <ng-template ngbTabContent>
+      <p>Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth
+      master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh
+      dreamcatcher synth. Cosby sweater eu banh mi, qui irure terry richardson ex squid. Aliquip placeat salvia cillum
+      iphone. Seitan aliquip quis cardigan american apparel, butcher voluptate nisi qui.</p>
+    </ng-template>
+  </ngb-tab>
+  <ngb-tab id="second-tab">
+    <ng-template ngbTabTitle> 
+      <a class="nav-link1" routerLink="/dashboard" [queryParams]="{tab:'second-tab'}">second-tab</a>
+       
+    </ng-template>
+    <ng-template ngbTabContent>Food truck fixie locavore, accusamus mcsweeney's marfa nulla single-origin coffee squid.
+      <p>Exercitation +1 labore velit, blog sartorial PBR leggings next level wes anderson artisan four loko farm-to-table
+      craft beer twee. Qui photo booth letterpress, commodo enim craft beer mlkshk aliquip jean shorts ullamco ad vinyl
+      cillum PBR. Homo nostrud organic, assumenda labore aesthetic magna delectus mollit. Keytar helvetica VHS salvia
+      yr, vero magna velit sapiente labore stumptown. Vegan fanny pack odio cillum wes anderson 8-bit, sustainable jean
+      shorts beard ut DIY ethical culpa terry richardson biodiesel. Art party scenester stumptown, tumblr butcher vero
+      sint qui sapiente accusamus tattooed echo park.</p>
+    </ng-template>
+  </ngb-tab>
+
+  <ngb-tab id="third-tab">
+      <ng-template ngbTabTitle> 
+          <a class="nav-link1" routerLink="/dashboard" [queryParams]="{tab:'third-tab'}">third-tab</a>
+           
+        </ng-template>
+        <ng-template ngbTabContent>
+      <p>Sed commodo, leo at suscipit dictum, quam est porttitor sapien, eget sodales nibh elit id diam. Nulla facilisi. Donec egestas ligula vitae odio interdum aliquet. Duis lectus turpis, luctus eget tincidunt eu, congue et odio. Duis pharetra et nisl at faucibus. Quisque luctus pulvinar arcu, et molestie lectus ultrices et. Sed diam urna, egestas ut ipsum vel, volutpat volutpat neque. Praesent fringilla tortor arcu. Vivamus faucibus nisl enim, nec tristique ipsum euismod facilisis. Morbi ut bibendum est, eu tincidunt odio. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Mauris aliquet odio ac lorem aliquet ultricies in eget neque. Phasellus nec tortor vel tellus pulvinar feugiat.</p>
+    </ng-template>
+  </ngb-tab>
+</ngb-tabset>
+
+<form class="form-inline">
+  <div class="form-group">
+    <div class="input-group">
+      <input class="form-control" (select)="onDateSelection($event)" placeholder="yyyy-mm-dd"
+             name="dp" [ngModel]="model"(ngModelChange)="onSelectDate($event)" ngbDatepicker #d="ngbDatepicker">
+      <div class="input-group-append">
+        <button class="btn btn-outline-secondary calendar" (click)="d.toggle()" type="button"></button>
+      </div>
+    </div>
+  </div>
+</form>
+<button class="" (click)="setDate()" type="button">new test</button>
+
+<hr/>
+<pre>Model: {{ model | json }}</pre>
